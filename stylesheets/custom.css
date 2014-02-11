@@ -1,0 +1,173 @@
+.gridster * {
+  margin:0;
+  padding:0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+/*/
+/* demo
+/*/
+
+
+body {
+    font-size: 0.8em;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: normal;
+    color: #444;
+    margin: 30px 40px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+/*/
+/* gridster
+/*/
+
+.gridster ul {
+    background-color: #fff;
+}
+
+.gridster li {
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+    line-height: 300%;
+}
+
+
+.gridster {
+    margin: 0 auto;
+
+    opacity: .8;
+
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    -ms-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+.gridster .gs-w {
+    background: #DDD;
+    cursor: pointer;
+}
+
+.gridster .player {
+    background: #BBB;
+}
+
+
+.gridster .preview-holder {
+    border: none!important;
+    background: red!important;
+}
+
+
+#wlk {
+    background: #fff !important;
+}
+
+#feedback{
+    background: #fff;
+    width: 100%;
+    height: 350px;
+}
+
+#done-popup{
+    background: #fff;
+    width: 100%;
+    height: 300px;
+}
+
+#feedbackWrapper, #done-popup {
+    padding: 50px;
+}
+
+h5 {
+    font-weight: 400;
+}
+
+#feedbackWrapper h2 {
+    font-size: 1em;
+    font-weight: 800;
+}
+
+#feedbackWrapper .options {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+#feedbackWrapper span {
+    font-family: "Open Sans" !important;
+    font-size: 2.5em;
+    font-weight: lighter;
+    margin: 10px;
+}
+
+#submitButton {
+    width: 55px;
+    height: 20px;
+    padding: 10px;
+    background: #dfdfdf;
+}
+
+table {
+    margin: 20px 0px 0px 0px;
+}
+
+td {
+    width: 190px;
+    margin-right: 10px;
+}
+
+#done-popup span{
+    font-family: "Open Sans" !important;
+    font-size: 1.6em;
+    font-weight: lighter;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/*-------------Area Colorings---------------------*/
+#lounges, #jarea, #shop, #power, #entrance, #cafe, #quiet {
+    background: #C0D6FA !important;
+}
+#pub {
+    background-color: #C0D6FA !important;
+}
+#prv {
+    background-color: #DDDDDD !important; 
+}
+#cls {
+    background-color: #E8E6AE !important;
+}
+
+.classrooms {
+    background: #E8E6AE !important;
+}
+
+#lounges, #jarea, #cafe, #quiet, #er, #residents, #conference, #entrance, .loved {
+    background-image: url('../images/red-heart.png') !important;
+    background-repeat: no-repeat !important;
+}
+
+#shop, #power {
+    background-image: url('../images/orange-circle.png') !important;
+    background-repeat: no-repeat !important;
+}
+
+#meeting, #room50, #room20, #room15 {
+    background-image: url('../images/blue-circle.png') !important;
+    background-repeat: no-repeat !important;
+}

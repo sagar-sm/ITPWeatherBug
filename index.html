@@ -19,8 +19,18 @@
 	<!-- CSS
   ================================================== -->
 	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<!--link rel="stylesheet" href="stylesheets/skeleton.css"-->
 	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="stylesheets/custom.css">
+	<link rel="stylesheet" href="stylesheets/jquery.gridster.css">
+	<link rel="stylesheet" href="stylesheets/magnificPopup.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+
+
+	<script src="scripts/jquery.js"></script>
+	<script src="scripts/jquery.gridster.min.js"></script>
+	<script type="text/javascript" src="scripts/init.js"></script>
+	<script type="text/javascript" src="scripts/magnific.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,7 +44,8 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 </head>
-<body>
+
+<body onload="init();">
 
 
 
@@ -46,55 +57,97 @@
 	<div class="container">
 		<div class="sixteen columns">
 			<h1 class="remove-bottom" style="margin-top: 40px">ITP WeatherBug</h1>
-			<h5>Version 1</h5>
+			<h5>Select where you are working</h5>
 			<hr />
+
+			<div class="gridster">
+			    <ul>
+			        
+			        <!--li data-row="1" data-col="1" data-sizex="1" data-sizey="1">Eric, Katherine</li>
+			        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">George</li>
+			        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">Midori</li>
+			        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">Shawn</li>
+			        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1">Nancy</li>
+			        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1">Marina</li>
+			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">Shiffman</li>
+			        <li data-row="1" data-col="8" data-sizex="1" data-sizey="1">Rozin</li>
+			        <li data-row="1" data-col="9" data-sizex="1" data-sizey="1">Tom, Clay</li-->
+			        <li data-row="1" data-col="1" data-sizex="5" data-sizey="1">Faculty Offices</li>
+			        <li data-row="1" data-col="6" data-sizex="2" data-sizey="3" id="lounges" class="loved">Lounges</li>
+			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">Faculty</li>
+			        <li data-row="1" data-col="8" data-sizex="1" data-sizey="1" id="conference" class="classrooms">Conference</li>
+			        <li data-row="1" data-col="9" data-sizex="2" data-sizey="2" id="residents">Residents</li>
+
+			        <li data-row="2" data-col="1" data-sizex="1" data-sizey="2">Karl, Rob</li>
+			        <li id="wlk" data-row="2" data-col="2" data-sizex="4" data-sizey="1">Walkway</li>
+			        <li id="wlk" data-row="2" data-col="8" data-sizex="2" data-sizey="1">Walkway</li>
+
+			        <li data-row="3" data-col="2" data-sizex="1" data-sizey="1">Gordie</li>
+			        <li data-row="3" data-col="3" data-sizex="1" data-sizey="1">Marlon</li>
+			        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1" id="er">ER</li>
+			        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1" id="room50" class="classrooms">Room 50</li>
+			        <li data-row="3" data-col="8" data-sizex="2" data-sizey="1" id="room15" class="classrooms">Room 15</li>
+			        <li data-row="3" data-col="9" data-sizex="1" data-sizey="1" id="quiet" class="loved">Quiet Room</li>
+			        <li data-row="3" data-col="10" data-sizex="1" data-sizey="1">Adjunct Room</li>
+
+			        <li data-row="4" data-col="1" data-sizex="1" data-sizey="3" id="power">Power Tools</li>
+			        <li id="wlk" data-row="4" data-col="2" data-sizex="4" data-sizey="1">Walkway</li>
+			        <li data-row="4" data-col="6" data-sizex="2" data-sizey="3" id="jarea" class="loved">J Area</li>
+			        <li id="wlk" data-row="4" data-col="8" data-sizex="2" data-sizey="1">Walkway</li>
+			        <li data-row="3" data-col="9" data-sizex="1" data-sizey="3" id="entrance">Entrance</li>
+			        <li data-row="3" data-col="10" data-sizex="1" data-sizey="2" id="cafe">Cafe</li>
+
+			     
+			        <li data-row="5" data-col="2" data-sizex="3" data-sizey="2" id="shop">Shop</li>
+			        <li data-row="5" data-col="5" data-sizex="1" data-sizey="2" class="classrooms" id="room20">Room 20</li>
+			        <li data-row="5" data-col="8" data-sizex="2" data-sizey="2" class="classrooms" id="meeting">Meeting Room</li>
+			        <li data-row="5" data-col="10" data-sizex="1" data-sizey="1">Dan O</li>
+			    </ul>
+			</div>
+
 		</div>
 
-		<div class="gridster">
-		    <ul>
-		        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
-		        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
-		        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
-		 
-		        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
-		        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
-		 
-		        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
-		        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
-		        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
-		 
-		        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
-		        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
-		 
-		        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
-		        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
-		    </ul>
+		<br/><br/>
+		<h6>Reference:</h6>
+		<p><span id="pub">Public spaces</span>  |  <span id="cls">Classrooms</span>  |  <span id="prv">Private spaces</span>  |  <img src="images/red-heart.png"></img> Loved spaces  |  <img src="images/orange-circle.png"></img> Warmer spaces (working on them).  |  <img src="images/blue-circle.png"></img> Cooler spaces (working on them too).</p>
+
+
+
+		<div id="feedback" class="white-popup mfp-hide">
+			<div id="feedbackWrapper">
+				<h2>HOW DOES IT FEEL RIGHT NOW?</h2>
+				<form action="submit">
+					<input class="options" type="radio" name="feedback" value="right" checked="true"><span>Feels just right.</span><br>
+					<input class="options" type="radio" name="feedback" value="cold"><span>Its very cold.</span><br>
+					<input class="options" type="radio" name="feedback" value="hot"><span>Its like an oven out here.</span><br>
+				</form>
+				<a href="#done-popup" class="open-popup-link"><div id="submitButton">Optimize</div></a>
+			</div>
+		</div>
+
+		<div id="done-popup" class="white-popup mfp-hide">
+		<span>Your opinion has been recorded and is currently being used to decide the temperature!</span>
+		<table>
+			<tr>
+				<td><strong>Areas warmer than yours</strong></td>
+				<td><strong>Areas cooler than yours</strong></td>
+			</tr>
+			<tr>
+				<td>Conference Room</td>
+				<td>Meeting Room</td>
+			</tr>
+			<tr>
+				<td>J Area</td>
+				<td>Room 50</td>
+			</tr>
+			<tr>
+				<td>Shop</td>
+				<td>Room 20</td>
+			</tr>
+		</table>
 		</div>
 
 
-
-
-
-
-
-
-		<div class="one-third column">
-			<h3>About Skeleton?</h3>
-			<p>Skeleton is a small collection of well-organized CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17" laptop screen or an iPhone. It's based on a responsive grid, but also provides very basic CSS for typography, buttons, forms and media queries. Go ahead, resize this super basic page to see the grid in action.</p>
-		</div>
-		<div class="one-third column">
-			<h3>Three Core Principles</h3>
-			<p>Skeleton is built on three core principles:</p>
-			<ul class="square">
-				<li><strong>A Responsive Grid Down To Mobile</strong>: Elegant scaling from a browser to tablets to mobile.</li>
-				<li><strong>Fast to Start</strong>: It's a tool for rapid development with best practices</li>
-				<li><strong>Style Agnostic</strong>: It provides the most basic, beautiful styles, but is meant to be overwritten.</li>
-			</ul>
-		</div>
-		<div class="one-third column">
-			<h3>Docs &amp; Support</h3>
-			<p>The easiest way to really get started with Skeleton is to check out the full docs and info at <a href="http://www.getskeleton.com">www.getskeleton.com.</a>. Skeleton is also open-source and has a <a href="https://github.com/dhgamache/skeleton">project on git</a>, so check that out if you want to report bugs or create a pull request. If you have any questions, thoughts, concerns or feedback, please don't hesitate to email me at <a href="mailto:hi@getskeleton.com">hi@getskeleton.com</a>.</p>
-		</div>
 
 	</div><!-- container -->
 
