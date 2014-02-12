@@ -1,3 +1,7 @@
+#limited {
+    width: 1300px;
+}
+
 .gridster * {
   margin:0;
   padding:0;
