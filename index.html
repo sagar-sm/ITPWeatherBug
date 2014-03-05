@@ -32,6 +32,25 @@
 	<script type="text/javascript" src="scripts/init.js"></script>
 	<script type="text/javascript" src="scripts/magnific.js"></script>
 
+	<script type="text/javascript">
+		function vote(i){
+			console.log(i);
+  			$.get("/vote/" + i, function(data){
+  				console.log(data);
+  				$('#tright').html(data[0]);
+  				$('#tcold').html(data[2]);
+  				$('#thot').html(data[4]);
+  			});
+  			$.magnificPopup.open({
+            items: {
+              src: '#done-popup',
+              type: 'inline',
+              mainClass: 'mfp-fade'
+            }
+          });
+		}
+	</script>
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -62,6 +81,7 @@
 
 			<div id="limited" class="gridster">
 			    <ul>
+			    	<li data-row="1" data-col="1" data-sizex="11" data-sizey="5">Room 50</li>
 			        
 			        <!--li data-row="1" data-col="1" data-sizex="1" data-sizey="1">Eric, Katherine</li>
 			        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">George</li>
@@ -72,7 +92,9 @@
 			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">Shiffman</li>
 			        <li data-row="1" data-col="8" data-sizex="1" data-sizey="1">Rozin</li>
 			        <li data-row="1" data-col="9" data-sizex="1" data-sizey="1">Tom, Clay</li-->
-			        <li data-row="1" data-col="1" data-sizex="5" data-sizey="1">Faculty Offices</li>
+
+
+			        <!--li data-row="1" data-col="1" data-sizex="5" data-sizey="1">Faculty Offices</li>
 			        <li data-row="1" data-col="6" data-sizex="2" data-sizey="3" id="lounges" class="loved">Lounges</li>
 			        <li data-row="1" data-col="7" data-sizex="1" data-sizey="1">Faculty</li>
 			        <li data-row="1" data-col="8" data-sizex="1" data-sizey="1" id="conference" class="classrooms">Conference</li>
@@ -101,7 +123,7 @@
 			        <li data-row="5" data-col="2" data-sizex="3" data-sizey="2" id="shop">Shop</li>
 			        <li data-row="5" data-col="5" data-sizex="1" data-sizey="2" class="classrooms" id="room20">Room 20</li>
 			        <li data-row="5" data-col="8" data-sizex="2" data-sizey="2" class="classrooms" id="meeting">Meeting Room</li>
-			        <li data-row="5" data-col="10" data-sizex="1" data-sizey="1">Dan O</li>
+			        <li data-row="5" data-col="10" data-sizex="1" data-sizey="1">Dan O</li-->
 			    </ul>
 			</div>
 
@@ -116,12 +138,12 @@
 		<div id="feedback" class="white-popup mfp-hide">
 			<div id="feedbackWrapper">
 				<h2>HOW DOES IT FEEL RIGHT NOW?</h2>
-				<form action="submit">
-					<input class="options" type="radio" name="feedback" value="right" checked="true"><span>Feels just right.</span><br>
-					<input class="options" type="radio" name="feedback" value="cold"><span>Its very cold.</span><br>
-					<input class="options" type="radio" name="feedback" value="hot"><span>Its like an oven out here.</span><br>
+				<form id="myForm" action="submit">
+					<input class="options" type="radio" name="feedbackRadio" onchange= "vote(0)" value="0" checked="true" href="#done-popup" class="open-popup-link"><span>Feels just right.</span><br>
+					<input class="options" type="radio" name="feedbackRadio" onchange="vote(1)" value="1" href="#done-popup" class="open-popup-link"><span>Its very cold.</span><br>
+					<input class="options" type="radio" name="feedbackRadio" onchange="vote(2)" value="2" href="#done-popup" class="open-popup-link"><span>Its like an oven out here.</span><br>
 				</form>
-				<a href="#done-popup" class="open-popup-link"><div id="submitButton">Optimize</div></a>
+				<!--a href="#done-popup" class="open-popup-link"><button id="submitButton">Optimize</button></a-->
 			</div>
 		</div>
 
@@ -129,20 +151,20 @@
 		<span>Your opinion has been recorded and is currently being used to decide the temperature!</span>
 		<table>
 			<tr>
-				<td><strong>Areas warmer than yours</strong></td>
-				<td><strong>Areas cooler than yours</strong></td>
+				<td><strong>Current Votes</strong></td>
+				<td><strong>Areas</strong></td>
 			</tr>
 			<tr>
-				<td>Conference Room</td>
-				<td>Meeting Room</td>
+				<td id="tright"></td>
+				<td>Just right</td>
 			</tr>
 			<tr>
-				<td>J Area</td>
-				<td>Room 50</td>
+				<td id="tcold"></td>
+				<td>Cold</td>
 			</tr>
 			<tr>
-				<td>Shop</td>
-				<td>Room 20</td>
+				<td id="thot"></td>
+				<td>Hot</td>
 			</tr>
 		</table>
 		</div>

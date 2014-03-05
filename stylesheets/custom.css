@@ -131,7 +131,8 @@ td {
     margin-right: 10px;
 }
 
-#done-popup span{
+
+#done-popup span, td{
     font-family: "Open Sans" !important;
     font-size: 1.6em;
     font-weight: lighter;

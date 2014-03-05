@@ -1,0 +1,18 @@
+{
+  "name": "ITPWeatherbug",
+  "version": "0.4.0",
+  "description" : "Collaborative voting system for weather control",
+  "keywords": "serial, node-serialport",
+  "author": {
+  	"name":"Sagar Mohite and Vitor Freire"
+   },
+  "dependencies": {
+    "serialport": "1.1.x",
+    "express": "3.x", 
+    "open": ">=0.0.4"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  }
+}
